@@ -18,10 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
+Route::get('/promo', [PromoController::class, 'readAll']);
 Route::get('/laundry', [LaundryController::class, 'readAll']);
 Route::get('/shop', [ShopController::class, 'readAll']);
 Route::get('/user', [UserController::class, 'readAll']);
