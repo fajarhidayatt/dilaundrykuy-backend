@@ -22,8 +22,14 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::get('/laundry', [LaundryController::class, 'readAll']);
 Route::get('/shop', [ShopController::class, 'readAll']);
 Route::get('/user', [UserController::class, 'readAll']);
 
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/laundry/user/{id}', [LaundryController::class, 'whereUserId']);
+    Route::post('/laundry/claim', [LaundryController::class, 'claim']);
+});
