@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ShopSeeder::class,
             LaundrySeeder::class,
+            PromoSeeder::class,
         ]);
     }
 }
