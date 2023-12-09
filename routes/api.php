@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::get('/shop', [ShopController::class, 'readAll']);
 Route::get('/user', [UserController::class, 'readAll']);
 
 Route::post('/register', [UserController::class, 'register']);
